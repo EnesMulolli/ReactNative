@@ -4,6 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import MainScreen from './MainScreen';
 import ExcerciseScreen from './screens/ExcerciseScreen';
+import ListScreen from './screens/ListScreen';
+
 
 
 const Stack = createStackNavigator();
@@ -11,9 +13,16 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+      initialRouteName='List'
+      screenOptions={{
+        headerTitle: 'APP',
+      }}
+      >
         <Stack.Screen name="Exercise" component={ExcerciseScreen}/>
-        <Stack.Screen name="Main" component={MainScreen}/> 
+        <Stack.Screen name="Main" component={MainScreen}/>
+        <Stack.Screen name="List" component={ListScreen}/> 
+ 
       </Stack.Navigator>
     </NavigationContainer>
     
