@@ -2,7 +2,7 @@ import React from "react";
 import {Text, StyleSheet, View, TouchableOpacity} from 'react-native';
 import StudentDetails from "../components/StudentDetails";
 
-const StudentsScreen = () => {
+const StudentsScreen = (props) => {
     return(
         <View>
             <Text style={styles.text}>Students Screen</Text>

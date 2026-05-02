@@ -9,6 +9,7 @@ import ButtonScreen from './screens/ButtonScreen';
 import MenuScreen from './screens/MenuScreen';
 import StudentsScreen from './screens/StudentsScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import ProjectScreen from './screens/ProjectScreen';
 
 
 
@@ -18,7 +19,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-      initialRouteName='Profile'
+      initialRouteName='Students'
       screenOptions={{
         headerTitle: 'APP',
       }}
@@ -30,6 +31,7 @@ export default function App() {
         <Stack.Screen name="Menu" component={MenuScreen} />
         <Stack.Screen name="Students" component={StudentsScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Project" component={ProjectScreen} />
 
  
       </Stack.Navigator>
