@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Arben Krasniqi",
+    "country": "Kosovo",
+    "description": "Frontend developer with experience in React and UI design."
+  },
+  {
+    "id": 2,
+    "name": "Lena Müller",
+    "country": "Germany",
+    "description": "Graphic designer specializing in branding and digital illustration."
+  },
+  {
+    "id": 3,
+    "name": "John Carter",
+    "country": "United States",
+    "description": "Backend engineer focused on APIs and cloud infrastructure."
+  },
+  {
+    "id": 4,
+    "name": "Sofia Rossi",
+    "country": "Italy",
+    "description": "Photographer passionate about travel and street photography."
+  },
+  {
+    "id": 5,
+    "name": "Kenji Tanaka",
+    "country": "Japan",
+    "description": "Mobile app developer creating productivity applications."
+  },
+  {
+    "id": 6,
+    "name": "Amira Hassan",
+    "country": "Egypt",
+    "description": "Content writer and SEO specialist for tech companies."
+  },
+  {
+    "id": 7,
+    "name": "Lucas Silva",
+    "country": "Brazil",
+    "description": "Fitness coach and nutrition enthusiast helping clients online."
+  },
+  {
+    "id": 8,
+    "name": "Emma Johnson",
+    "country": "Canada",
+    "description": "Data analyst experienced in visualization and reporting."
+  },
+  {
+    "id": 9,
+    "name": "Noah Williams",
+    "country": "Australia",
+    "description": "Cybersecurity student interested in ethical hacking."
+  },
+  {
+    "id": 10,
+    "name": "Claire Dubois",
+    "country": "France",
+    "description": "Marketing manager with a focus on social media campaigns."
+  }
+]

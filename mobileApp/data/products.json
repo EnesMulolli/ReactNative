@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 15 Pro",
+    "category": "Smartphones",
+    "price": 1199.99,
+    "stock": "yes",
+    "image": "https://example.com/images/iphone15pro.jpg",
+    "description": "Apple flagship smartphone with A17 Pro chip and titanium design."
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S24",
+    "category": "Smartphones",
+    "price": 999.99,
+    "stock": "yes",
+    "image": "https://example.com/images/galaxys24.jpg",
+    "description": "Premium Android smartphone with advanced AI camera features."
+  },
+  {
+    "id": 3,
+    "name": "Sony WH-1000XM5",
+    "category": "Headphones",
+    "price": 349.99,
+    "stock": "no",
+    "image": "https://example.com/images/sonyxm5.jpg",
+    "description": "Wireless noise-canceling headphones with high-quality audio."
+  },
+  {
+    "id": 4,
+    "name": "MacBook Air M3",
+    "category": "Laptops",
+    "price": 1499.99,
+    "stock": "yes",
+    "image": "https://example.com/images/macbookairm3.jpg",
+    "description": "Lightweight laptop powered by Apple's M3 chip."
+  },
+  {
+    "id": 5,
+    "name": "Logitech MX Master 3S",
+    "category": "Accessories",
+    "price": 99.99,
+    "stock": "yes",
+    "image": "https://example.com/images/mxmaster3s.jpg",
+    "description": "Ergonomic wireless mouse designed for productivity."
+  },
+  {
+    "id": 6,
+    "name": "ASUS ROG Strix G16",
+    "category": "Gaming Laptops",
+    "price": 1899.99,
+    "stock": "no",
+    "image": "https://example.com/images/rogstrixg16.jpg",
+    "description": "High-performance gaming laptop with RTX graphics."
+  },
+  {
+    "id": 7,
+    "name": "Apple Watch Series 9",
+    "category": "Smartwatches",
+    "price": 429.99,
+    "stock": "yes",
+    "image": "https://example.com/images/applewatch9.jpg",
+    "description": "Smartwatch with health tracking and seamless iPhone integration."
+  },
+  {
+    "id": 8,
+    "name": "Canon EOS R6",
+    "category": "Cameras",
+    "price": 2499.99,
+    "stock": "yes",
+    "image": "https://example.com/images/canoneosr6.jpg",
+    "description": "Mirrorless camera ideal for photography and video creation."
+  },
+  {
+    "id": 9,
+    "name": "PlayStation 5",
+    "category": "Gaming Consoles",
+    "price": 499.99,
+    "stock": "no",
+    "image": "https://example.com/images/ps5.jpg",
+    "description": "Next-generation gaming console with ultra-fast SSD storage."
+  },
+  {
+    "id": 10,
+    "name": "Razer BlackWidow V4",
+    "category": "Keyboards",
+    "price": 169.99,
+    "stock": "yes",
+    "image": "https://example.com/images/blackwidowv4.jpg",
+    "description": "Mechanical gaming keyboard with RGB lighting and fast switches."
+  }
+]

@@ -1,51 +1,60 @@
-import React from "react"; 
-import { Text, StyleSheet, ScrollView, View } from "react-native";  
-import ProjectsDetails from "../components/ProjectsDetails";
+import React from 'react';
+import {View, FlatList, Image, StyleSheet} from 'react-native';
+import {projectIamges} from '../components/ProjectsDetails.js';
 
 const ProjectScreen = () => {
-    return(
-        <ScrollView style={styles.container}>
-            <Text style={styles.title}>My Projects</Text>
-
-            <View style={styles.grid}>
-                <ProjectsDetails 
-                    description="Project 1" 
-                    project={require("../assets/web1.png")} 
-                />
-
-                <ProjectsDetails 
-                    description="Project 2" 
-                    project={require("../assets/web2.png")} 
-                />
-
-                <ProjectsDetails 
-                    description="Project 3" 
-                    project={require("../assets/web3.png")} 
-                />
-
-            </View>
-        </ScrollView>
-    );
-}
+    return (
+        <View style={styles.container}>
+            <FlatList
+                data = {projectIamges}
+                keyExtractor={(item) => item.id}
+                horizontal={false}
+                nestedScrollEnabled
+                scrollEnabled
+                numColumns={2}
+                contentContainerStyle={styles.listContent}
+                columnWrapperStyle={styles.columnWrapper}
+                showsVerticalScrollIndicator={false}
+                renterItem = {({item}) => (
+                    <View style={styles.projectCard}>
+                        <Image source={item.image}  style={styles.projectImage}/>
+                    </View>
+                )}
+            />
+        </View>
+    )
+} 
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#f5f5f5",
-        padding: 10
+        backgroundColor: "#F5F5F5",
+        paddingHorizontal: 16,
+        paddingTop: 16,
     },
-
-    title: {
-        fontSize: 26,
-        fontWeight: "bold",
-        marginBottom: 15,
-        textAlign: "center"
+    listContent: {
+        paddingBottom: 20,
     },
-
-    grid: {
-        flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: "space-between"
+    columnWrapper: {
+        justifyContent: 'space-between',
+        gap: 14,
+        marginBottom: 14,
+    },
+    projectCard: {
+        flex: 1,
+        borderRadius: 14,
+        overflow: 'hidden',
+        backgroundColor: '#FFFF',
+        shadowColor: '#000',
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.08,
+        shadowRadius: 4,
+        elevation: 3
+    },
+    projectImage:{
+        width: '100%',
+        height: 210,
+        resizeMode: 'cover'
     }
 });
 

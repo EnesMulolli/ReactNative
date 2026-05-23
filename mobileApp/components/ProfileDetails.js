@@ -1,117 +1,91 @@
 import React from "react";
-import {
-  Text,
-  StyleSheet,
-  View,
-  Image,
-  Button,
-  TouchableOpacity
-} from "react-native";
+import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
+import ProfileScreen from "../screens/ProfileScreen";
 
-const ProfileDetails = (props) => {
-  return (
-    <View style={styles.container}>
-      <View style={styles.avatar}>
-        
-        <Image source={props.image} style={styles.img} />
 
-        <View style={styles.infoWrapper}>
-          <Text style={styles.fullName}>
-            {props.fullName}
-          </Text>
 
-          <Text style={styles.description}>
-            {props.description}
-          </Text>
+const ProfileInfo = ({name, position, description, profileImage}) => {
 
-          <Text style={styles.position}>
-            {props.position}
-          </Text>
+    return (
+        <View style={styles.container}>
+            <View style={styles.heroSection}>
+                <Image source={profileImage} style={styles.profileImage}/>
+            </View>
 
-          <Button
-            title="Hire ME!"
-            color="purple"
-            onPress={() => console.log("Message sent!")}
-          />
+            <View style={styles.cardContent}>
+                <Text style={styles.fullname}>{name}</Text>
+                <Text style={styles.position}>{position}</Text>
+                <Text style={styles.description}>{description}</Text>
+                <TouchableOpacity style={styles.hireButton}>
+                    <Text style={styles.hireButtonTxt}>HIRE ME</Text>
+                </TouchableOpacity>
+            </View>
+
         </View>
-
-        <View style={styles.projectsWrapper}>
-          <Image
-            source={props.project}
-            style={styles.projectImg}
-          />
-
-          <TouchableOpacity
-            onPress={() =>
-              props.navigation.navigate("ProjectScreen")
-            }
-          >
-            <Text style={styles.projectLink}>
-              View All Projects
-            </Text>
-          </TouchableOpacity>
-        </View>
-
-      </View>
-    </View>
-  );
-};
+    )
+}
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
-  },
+    container: {
+        marginBottom: 18,
+    },
+    heroSection: {
+        height: 355,
+        borderBottomLeftRadius: 36,
+        borderBottomRightRadius: 36,
+        backgroundColor: '#6CC5E6',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        overflow: 'hidden',
+    },
+    profileImage: {
+        width: '78%',
+        height: '78%',
+        resizeMode: 'contain'
+    },
+    cardContent: {
+        marginTop: -48,
+        marginHorizontal: 24,
+        borderRadius: 24,
+        backgroundColor: '#f3f3f3',
+        paddingHorizontal: 24,
+        paddingVertical:24,
+        alignItems: 'center',
+        shadowColor: '#000',
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.08,
+        shadowRadius: 6,
+        elevation: 4
+    },
+    fullname: {
+        fontsize: 42,
+        fontWeight: 'bold',
+        color: '#101010',
+        marginBottom: 10
+    },
+    position: {
+        fontSize: 20,
+        color: '#4F4F4F',
+        marginBottom: 10,
+    },
+    description: {
+        fontSize: 17,
+        color: '#2D2D2D',
+        marginBottom: 16,
+        lineHeight: 25,
+        textAlign: 'center'
+    },
+    hireButton: {
+        backgroundColor: '#FFD400',
+        paddingVertical: 14,
+        paddingHorizontal: 28,
+        borderRadius: 28
+    },
+    hireButtonTxt: {
+        color: '#fff',
+        fontWeight: 'bold',
+        fontSize: 23
+    }
+})
 
-  avatar: {
-    alignItems: "center"
-  },
-
-  img: {
-    width: 180,
-    height: 180,
-    borderRadius: 90
-  },
-
-  infoWrapper: {
-    marginTop: 20,
-    alignItems: "center"
-  },
-
-  fullName: {
-    fontSize: 24,
-    fontWeight: "bold"
-  },
-
-  description: {
-    marginTop: 5,
-    fontSize: 16,
-    textAlign: "center"
-  },
-
-  position: {
-    marginTop: 5,
-    fontSize: 18,
-    color: "gray"
-  },
-
-  projectsWrapper: {
-    marginTop: 40,
-    alignItems: "center"
-  },
-
-  projectImg: {
-    width: 220,
-    height: 140,
-    borderRadius: 10
-  },
-
-  projectLink: {
-    marginTop: 10,
-    color: "purple",
-    fontSize: 18
-  }
-});
-
-export default ProfileDetails;
+export default ProfileInfo;

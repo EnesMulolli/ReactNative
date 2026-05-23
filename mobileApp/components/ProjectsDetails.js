@@ -1,48 +1,89 @@
 import React from "react";
-import {
-    Text,
-    StyleSheet,
-    View,
-    Image,
-    TouchableOpacity
-} from "react-native";
+import {View, Text, Image, TouchableOpacity, StyleSheet, FlatList} from 'react-native';
 
-const ProjectsDetails = (props) => {
-    return(
-        <View style={styles.card}>
-            <Image source={props.project} style={styles.projectImg} />
+export const projectImages = [
+    {id: '1', image: require('../assets/project1.png')},
+    {id: '2', image: require('../assets/project2.png')},
+    {id: '3', image: require('../assets/project3.png')},
+    {id: '4', image: require('../assets/project4.png')},
+    {id: '5', image: require('../assets/project5.png')},
+    {id: '6', image: require('../assets/project6.png')},
+];
 
-            <Text style={styles.description}>
-                {props.description}
-            </Text>
+const Projects = ({onViewAll}) => {
+    const renderProject = ({item}) => (
+        <View style={styles.projectCard}>
+            <Image source={item.image} style={styles.projectImage} />
+        </View>
+    );
+    return (
+        <View style={styles.container}>
+            <View style={styles.header}>
+                <Text style={styles.title}>PROJECTS</Text>
+                <TouchableOpacity onPress={onViewAll}>
+                    <Text style={styles.viewAll}>View All</Text>
+                </TouchableOpacity>
+            </View>
+            <FlatList 
+                data={projectImages}
+                keyExtractor={(item) => item.id}
+                horizontal={true}
+                nestedScrollEnabled
+                scrollEnabled
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={styles.projectContainer}
+                renderItem={renderProject}
+            />
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    card: {
-        width: "28%", // 👈 2 cards per row
-        height: 350,
-        backgroundColor: "#fff",
-        borderRadius: 12,
-        marginBottom: 15,
-        overflow: "hidden",
-
-        boxShadow: "0px 3px 8px rgba(0,0,0,0.1)",
-        elevation: 4
+    continer: {
+        marginTop: 6,
+        marginBottom: 20,
+        paddingHorizontal: 18,
     },
-
-    projectImg: {
-        width: "100%",
-        height: "80%",
+    header: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 15
     },
-
-    description: {
-        padding: 10,
-        fontSize: 14,
-        fontWeight: "600",
-        textAlign: "center"
+    title: {
+        fontSize: 34,
+        fontWeight: 'bold',
+        color: '#161616',
+    },
+    viewAll: {
+        fontSize: 31,
+        color: '#fff',
+        backgroundColor: '#FFD400',
+        paddingVertical: 8,
+        paddingHorizontal: 20,
+        borderRadius: 22,
+        fontWeight: '600',
+        overflow: 'hidden'
+    },
+    projectContainer: {
+        paddingRight: 6
+    },
+    projectCard: {
+        width: 170,
+        borderRadius: 16,
+        overflow: 'hidden',
+        marginRight: 14,
+        shadowColor: '#000',
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.08,
+        shadowRadius: 4,
+        elevation: 3
+    },
+    projectImage: {
+        width: '100%',
+        height: 190,
+        borderRadius: 16
     }
-});
+})
 
-export default ProjectsDetails;
+export default Projects
