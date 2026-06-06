@@ -26,3 +26,4 @@ npm dedupe
 
 npx expo-doctor
 
+npx expo install @react-native-masked-view/masked-view- react-native-reanimated react-native-worklets
